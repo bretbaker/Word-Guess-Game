@@ -3,6 +3,8 @@ let guessesRemaining = 12;
 let lettersGuessed = [];
 let letterGuessed;
 let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+let winCount = 0;
+let lossCount = 0;
 
 // get random word
 let beachWords = ["boardwalk", "beachball", "crab", "conch", "seagull", "lifeguard", "surfboard", "pelican", "starfish", "sandcastle"];
@@ -50,13 +52,10 @@ let letterMatch = () => {
         if (element === letterGuessed) {
             indices.forEach((i) => {
                 blankSpaces.splice(i, 1, element);
-                console.log(blankSpaces);
             })
         }
     })
 }
-
- 
 
 // display initial blank spaces and guesses remaining
 window.onload = () => {
@@ -64,20 +63,66 @@ window.onload = () => {
     document.getElementById("guessesLeft").innerHTML = "12";
 }
 
+// create win condition function
+let winner = () => {
+    winCount += 1;
+    document.getElementById("wins").innerHTML = winCount;
+    chosenWord = randWord();
+    randWord();
+    chosenWord = chosenWord.toUpperCase();
+    console.log(chosenWord);
+    currentWord = [];
+    currentWordArr();
+    console.log(currentWord);
+    blankSpaces = [];
+    blankSpacesArr();
+    document.getElementById("currentWord").innerHTML = blankSpaces.join(" ");
+    guessesRemaining = 12;
+    document.getElementById("guessesLeft").innerHTML = "12";
+    lettersGuessed = [];
+    document.getElementById("guesses").innerHTML = "";
+}
+
+// create lose condition funcion
+let loser = () => {
+    lossCount += 1;
+    document.getElementById("losses").innerHTML = lossCount;
+    chosenWord = randWord();
+    randWord();
+    chosenWord = chosenWord.toUpperCase();
+    console.log(chosenWord);
+    currentWord = [];
+    currentWordArr();
+    console.log(currentWord);
+    blankSpaces = [];
+    blankSpacesArr();
+    document.getElementById("currentWord").innerHTML = blankSpaces.join(" ");
+    guessesRemaining = 12;
+    document.getElementById("guessesLeft").innerHTML = "12";
+    lettersGuessed = [];
+    document.getElementById("guesses").innerHTML = "";
+}
+
 // get user input and return appropriate output
 document.onkeyup = (event) => {
     letterGuessed = event.key;
     letterGuessed = letterGuessed.toUpperCase();
+
     lettersGuessed.push(letterGuessed);
     letterMatch();
+    let winWord = blankSpaces.join("");
+    console.log(chosenWord);
+    console.log(winWord);
+    console.log(currentWord);
+    console.log(blankSpaces);
     document.getElementById("currentWord").innerHTML = blankSpaces.join(" ");
     document.getElementById("guesses").innerHTML = lettersGuessed.join(", ");
     guessesRemaining -= 1;
     document.getElementById("guessesLeft").innerHTML = guessesRemaining;
-    // for (let i = 0; i < currentWord.length; i++) {
-    //     if (letterGuessed === currentWord[i]) {
-    //         blankSpaces.splice(i, 1, letterGuessed);
-    //         document.getElementById("currentWord").innerHTML = blankSpaces.join(" ");
-    //     }
-    // }
+
+    if (winWord === chosenWord && guessesRemaining > 0) {
+        winner();
+    } else if (winWord != chosenWord && guessesRemaining === 0) {
+        loser();
+    }
 }

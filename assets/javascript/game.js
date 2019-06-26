@@ -1,4 +1,7 @@
-// declare global variables
+// -------------------------
+// declare global variables ------------------------------------------------------------------------
+// -------------------------
+
 let guessesRemaining = 12;
 let lettersGuessed = [];
 let letterGuessed;
@@ -7,19 +10,24 @@ let winCount = 0;
 let lossCount = 0;
 let alreadyGuessed;
 let indices;
+let chosenWord;
+let beachWords = ["boardwalk", "beachball", "crab", "conch", "seagull", "lifeguard", "surfboard", "pelican", "starfish", "sandcastle"];
+let currentWord = [];
+let blankSpaces = [];
+
+// ---------------------------
+// declare global functions --------------------------------------------------------------------------
+// ----------------------------
 
 // get random word
-let beachWords = ["boardwalk", "beachball", "crab", "conch", "seagull", "lifeguard", "surfboard", "pelican", "starfish", "sandcastle"];
 let randNum = () => {
     return Math.floor(Math.random() * beachWords.length);
 }
 let randWord = () => {
     return beachWords[randNum()];
 }
-let chosenWord = randWord();
 
-// set random word
-let currentWord = [];
+// generate array for chosen word
 let currentWordArr = () => {
     for (let i = 0; i < chosenWord.length; i++) {
         currentWord.push(chosenWord[i]);
@@ -27,7 +35,6 @@ let currentWordArr = () => {
 }
 
 // set blank spaces for each letter of random word
-let blankSpaces = [];
 let blankSpacesArr = () => {
     for (let i = 0; i < chosenWord.length; i++) {
         blankSpaces.push("_") * i;
@@ -107,15 +114,20 @@ let alreadyGuessedCheck = () => {
     }
 }
 
+// -------------------------------------------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------------------------
+// ----------------------------------------------- M A I N - B O D Y -------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------------------------
+
 // call initial functions
 randWord();
+chosenWord = randWord();
 chosenWord = chosenWord.toUpperCase();
 console.log(chosenWord);
 currentWordArr();
 console.log(currentWord);
 blankSpacesArr();
-
-// display initial blank spaces and guesses remaining
 window.onload = () => {
     document.getElementById("currentWord").innerHTML = blankSpaces.join(" ");
     document.getElementById("guessesLeft").innerHTML = "12";

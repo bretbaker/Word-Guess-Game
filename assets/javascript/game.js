@@ -14,6 +14,7 @@ let chosenWord;
 let beachWords = ["boardwalk", "beachball", "crab", "conch", "seagull", "lifeguard", "surfboard", "pelican", "starfish", "sandcastle"];
 let currentWord = [];
 let blankSpaces = [];
+let specChar;
 
 // ---------------------------
 // declare global functions --------------------------------------------------------------------------
@@ -114,6 +115,15 @@ let alreadyGuessedCheck = () => {
     }
 }
 
+// create function that checks for special characters and returns error if true
+let specCharCheck = () => {
+    if (alphabet.includes(letterGuessed)) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
 // -------------------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------------------------
 // ----------------------------------------------- M A I N - B O D Y -------------------------------------------------------------
@@ -143,10 +153,12 @@ document.onkeyup = (event) => {
     console.log(lettersGuessed);
     alreadyGuessedCheck();
     alreadyGuessed = alreadyGuessedCheck();
-    if (alreadyGuessed) {
+    specCharCheck();
+    specChar = specCharCheck();
+    if (alreadyGuessed && specChar === false) {
         document.getElementById("alert").innerHTML = "You already guessed that! Guess a different letter!";
         lettersGuessed.pop();
-    } else if (alreadyGuessed === false) {
+    } else if (alreadyGuessed === false && specChar === false) {
         spliceBlankSpaces();
         let winWord = blankSpaces.join("");
         console.log(winWord);
@@ -161,6 +173,9 @@ document.onkeyup = (event) => {
         } else if (winWord != chosenWord && guessesRemaining === 0) {
             loser();
         }
+    } else if (specChar === true) {
+        document.getElementById("alert").innerHTML = "Error! No special characters!";
+        lettersGuessed.pop();
     }
     
 }

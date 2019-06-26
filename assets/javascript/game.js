@@ -177,5 +177,4 @@ document.onkeyup = (event) => {
         document.getElementById("alert").innerHTML = "Error! No special characters!";
         lettersGuessed.pop();
     }
-    
 }

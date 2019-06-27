@@ -35,6 +35,39 @@ let currentWordArr = () => {
     }
 }
 
+// functions to be called if user wins, changes display of appropriate image from none to inline-block
+let boardwalkImage = () => {
+    document.getElementById("image").src = "assets/images/boardwalk.jpg";
+}
+let beachballImage = () => {
+    document.getElementById("image").src = "assets/images/beachball.jpg";
+}
+let crabImage = () => {
+    document.getElementById("image").src = "assets/images/crab.jpg";
+}
+let conchImage = () => {
+    document.getElementById("image").src = "assets/images/conch.jpg";
+}
+let lifeguardImage = () => {
+    document.getElementById("image").src = "assets/images/lifeguard.jpg";
+}
+let pelicanImage = () => {
+    document.getElementById("image").src = "assets/images/pelican.jpg";
+}
+let seagullImage = () => {
+    document.getElementById("image").src = "assets/images/seagull.jpg";
+}
+let starfishImage = () => {
+    document.getElementById("image").src = "assets/images/starfish.jpg";
+}
+let sandcastleImage = () => {
+    document.getElementById("image").src = "assets/images/sandcastle.jpg";
+}
+let surfboardImage = () => {
+    document.getElementById("image").src = "assets/images/surfboard.jpg";
+}
+
+
 // set blank spaces for each letter of chosen word
 let blankSpacesArr = () => {
     for (let i = 0; i < chosenWord.length; i++) {
@@ -66,7 +99,6 @@ let winner = () => {
     winCount += 1;
     document.getElementById("wins").innerHTML = winCount;
     chosenWord = randWord();
-    randWord();
     chosenWord = chosenWord.toUpperCase();
     console.log(chosenWord);
     currentWord = [];
@@ -87,7 +119,6 @@ let loser = () => {
     lossCount += 1;
     document.getElementById("losses").innerHTML = lossCount;
     chosenWord = randWord();
-    randWord();
     chosenWord = chosenWord.toUpperCase();
     console.log(chosenWord);
     currentWord = [];
@@ -131,7 +162,6 @@ let specCharCheck = () => {
 // -------------------------------------------------------------------------------------------------------------------------------
 
 // call initial functions
-randWord();
 chosenWord = randWord();
 chosenWord = chosenWord.toUpperCase();
 console.log(chosenWord);
@@ -151,9 +181,7 @@ document.onkeyup = (event) => {
     console.log(letterGuessed);
     lettersGuessed.push(letterGuessed);
     console.log(lettersGuessed);
-    alreadyGuessedCheck();
     alreadyGuessed = alreadyGuessedCheck();
-    specCharCheck();
     specChar = specCharCheck();
     if (alreadyGuessed && specChar === false) {
         document.getElementById("alert").innerHTML = "You already guessed that letter! Guess a different one!";
@@ -168,7 +196,35 @@ document.onkeyup = (event) => {
         document.getElementById("guesses").innerHTML = lettersGuessed.join(", ");
         guessesRemaining -= 1;
         document.getElementById("guessesLeft").innerHTML = guessesRemaining;
-        if (winWord === chosenWord) {
+        if (winWord === chosenWord && chosenWord === "BOARDWALK") {
+            boardwalkImage();
+            winner();
+        } else if (winWord === chosenWord && chosenWord === "BEACHBALL") {
+            beachballImage();
+            winner();
+        } else if (winWord === chosenWord && chosenWord === "CRAB") {
+            crabImage();
+            winner();
+        } else if (winWord === chosenWord && chosenWord === "CONCH") {
+            conchImage();
+            winner();
+        } else if (winWord === chosenWord && chosenWord === "SEAGULL") {
+            seagullImage();
+            winner();
+        } else if (winWord === chosenWord && chosenWord === "LIFEGUARD") {
+            lifeguardImage();
+            winner();
+        } else if (winWord === chosenWord && chosenWord === "SURFBOARD") {
+            surfboardImage();
+            winner();
+        } else if (winWord === chosenWord && chosenWord === "PELICAN") {
+            pelicanImage();
+            winner();
+        } else if (winWord === chosenWord && chosenWord === "STARFISH") {
+            starfishImage();
+            winner();
+        } else if (winWord === chosenWord && chosenWord === "SANDCASTLE") {
+            sandcastleImage();
             winner();
         } else if (winWord != chosenWord && guessesRemaining === 0) {
             loser();

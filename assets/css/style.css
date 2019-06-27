@@ -1,50 +1,54 @@
 body {
     background-image: url("../images/dark-paths/dark-paths.png");
+    font-family: 'Sonsie One', cursive;
+}
+.head-container {
+    margin: 0 auto;
+    margin-top: 2%;
+    text-align: center;
+    width: 930px;
+    border-bottom: double white;
 }
 .header1 {
     color: white;
     font-size: 5rem;
     text-align: center;
-    margin-top: 2%;
+    margin: 0 auto;
 }
-/* #main-title {
-    display: inline-block;
-} */
 .header2 {
     color: white;
     font-size: 3rem;
     text-align: center;
-    margin-top: 2%;
+    margin: 0 auto;
+    padding-bottom: 1%;
 }
-.container {
-    width: 960px;
+.body-container {
+    width: 900px;
     background-color: rgba(135,206,250,0.25);
     margin: 3% auto;
-    padding: 3%;
+    padding: 1%;
+    border: double white;
+    font-size: 1.5rem;
 }
 .instructions {
     color: white;
-    font-size: 1.5rem;
     text-align: center;
 }
 .result-tally {
     color: white;
-    font-size: 1.5rem;
     text-align: center;
     margin-top: 2%;
 }
 .game {
     color: white;
-    font-size: 1.5rem;
     text-align: center;
     margin-top: 2%;
     height: 260px;
 }
 .alert-container {
     color: white;
-    font-size: 1.5rem;
     text-align: center;
-    margin-top: 2%;
+    margin-top: 3%;
     height: 40px;
 }
 .image-container {
@@ -55,4 +59,71 @@ body {
     width: 450px;
     height: auto;
     display: inline-block;
+    border: double white;
+}
+.foot {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    color: white;
+    background-color: rgba(135,206,250,0.25);
+    border-top: double white;
+    position: fixed;
+    bottom: 0;
+}
+#foot-text {
+    width: 100%;
+    position: fixed;
+    bottom: 1%;
+}
+@media only screen and (max-width: 980px) {
+    .head-container {
+        width: 728px;
+    }
+    .body-container {
+        width: 728px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .head-container {
+        width: 630px;
+    }
+    .body-container {
+        width: 630px;
+    }
+    .foot {
+        position: relative;
+    }
+    #foot-text {
+        position: relative;
+        margin-top: 2.5%;
+    }
+}
+@media only screen and (max-width: 655px) {
+    .head-container {
+        width: 97%;
+    }
+    .header1 {
+        font-size: 3rem;
+    }
+    .header2 {
+        font-size: 1.75rem;
+    }
+    .body-container {
+        width: 95%;
+        font-size: 1rem;
+    }
+    .game {
+        height: 200px;
+    }
+    #image {
+        width: 75%;
+    }
+    .foot {
+        position: relative;
+    }
+    #foot-text {
+        position: relative;
+        margin-top: 4%;
+    }
 }

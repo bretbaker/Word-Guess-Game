@@ -14,6 +14,7 @@ body {
     font-size: 5rem;
     text-align: center;
     margin: 0 auto;
+    text-shadow: 5px 5px rgba(135,206,250,0.5);
 }
 .header2 {
     color: white;
@@ -21,6 +22,7 @@ body {
     text-align: center;
     margin: 0 auto;
     padding-bottom: 1%;
+    text-shadow: 5px 5px rgba(135,206,250,0.5);
 }
 .body-container {
     width: 900px;
@@ -54,7 +56,17 @@ body {
 .image-container {
     text-align: center;
     margin-top: 2%;
+    position: relative;
 }
+#winning-word {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: white;
+    text-shadow: 5px 5px rgba(135,206,250,0.5);
+  }
 #image {
     width: 450px;
     height: auto;
@@ -105,9 +117,11 @@ body {
     }
     .header1 {
         font-size: 3rem;
+        text-shadow: 3px 3px rgba(135,206,250,0.5);
     }
     .header2 {
         font-size: 1.75rem;
+        text-shadow: 3px 3px rgba(135,206,250,0.5);
     }
     .body-container {
         width: 95%;
@@ -116,6 +130,10 @@ body {
     .game {
         height: 200px;
     }
+    #winning-word {
+        font-size: 1.75rem;
+        text-shadow: 3px 3px rgba(135,206,250,0.5);
+      }
     #image {
         width: 75%;
     }

@@ -38,33 +38,43 @@ let currentWordArr = () => {
 // functions to be called if user wins, changes display of appropriate image from none to inline-block
 let boardwalkImage = () => {
     document.getElementById("image").src = "assets/images/boardwalk.jpg";
+    document.getElementById("winning-word").innerHTML = "Boardwalk!";
 }
 let beachballImage = () => {
     document.getElementById("image").src = "assets/images/beachball.jpg";
+    document.getElementById("winning-word").innerHTML = "Beachball!";
 }
 let crabImage = () => {
     document.getElementById("image").src = "assets/images/crab.jpg";
+    document.getElementById("winning-word").innerHTML = "Crab!";
 }
 let conchImage = () => {
     document.getElementById("image").src = "assets/images/conch.jpg";
+    document.getElementById("winning-word").innerHTML = "Conch!";
 }
 let lifeguardImage = () => {
     document.getElementById("image").src = "assets/images/lifeguard.jpg";
+    document.getElementById("winning-word").innerHTML = "Lifeguard!";
 }
 let pelicanImage = () => {
     document.getElementById("image").src = "assets/images/pelican.jpg";
+    document.getElementById("winning-word").innerHTML = "Pelican!";
 }
 let seagullImage = () => {
     document.getElementById("image").src = "assets/images/seagull.jpg";
+    document.getElementById("winning-word").innerHTML = "Seagull!";
 }
 let starfishImage = () => {
     document.getElementById("image").src = "assets/images/starfish.jpg";
+    document.getElementById("winning-word").innerHTML = "Starfish!";
 }
 let sandcastleImage = () => {
     document.getElementById("image").src = "assets/images/sandcastle.jpg";
+    document.getElementById("winning-word").innerHTML = "Sandcastle!";
 }
 let surfboardImage = () => {
     document.getElementById("image").src = "assets/images/surfboard.jpg";
+    document.getElementById("winning-word").innerHTML = "Surfboard!";
 }
 
 

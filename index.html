@@ -3,27 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link href="assets/css/reset.css" type="text/css" rel="stylesheet"/> -->
+    <link href="assets/css/reset.css" type="text/css" rel="stylesheet"/>
     <link href="assets/css/style.css" type="text/css" rel="stylesheet"/>
     <title>Word Guess Game</title>
     <script src="assets/javascript/game.js" type="text/javascript"></script>
 </head>
 <body>
-    <h1>Hangman</h1>
-    <h2>Beach Style</h2>
-    <p>Press any letter to start guessing!</p>
-    <p>(No special characters)</p>
-    <p>Wins:</p>
-    <p id="wins">0</p>
-    <p>Losses:</p>
-    <p id="losses">0</p>
-    <p>Current Word:</p>
-    <p id="currentWord"></p>
-    <p>Number of Guesses Remaining:</p>
-    <p id="guessesLeft"></p>
-    <p>Letters Already Guessed:</p>
-    <p id="guesses"></p>
-    <p id="alert"></p>
-    <img id="image" src="assets/images/beach.jpg">
+    <div class="header1">
+        <h1 id="main-title">Hangman</h1>
+    </div>
+    <div class="header2">
+        <h2>Beach Style</h2>
+    </div>
+    <div class="container">
+        <div class="instructions">
+            <p>Press any letter to start guessing!</p>
+            <p>(No special characters)</p>
+        </div>
+        <div class="result-tally">
+            <p>Wins:</p>
+            <br>
+            <p id="wins">0</p>
+            <br>
+            <p>Losses:</p>
+            <br>
+            <p id="losses">0</p>
+        </div>
+        <div class="game">
+            <p>Current Word:</p>
+            <br>
+            <p id="currentWord"></p>
+            <br>
+            <p>Number of Guesses Remaining:</p>
+            <br>
+            <p id="guessesLeft"></p>
+            <br>
+            <p>Letters Already Guessed:</p>
+            <br>
+            <p id="guesses"></p>
+        </div>
+        <div class="alert-container">
+            <p id="alert"></p>
+        </div>
+        <div class="image-container">
+            <img id="image" src="assets/images/beach.jpg">
+        </div>
+    </div>
 </body>
 </html>

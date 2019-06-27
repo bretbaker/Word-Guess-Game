@@ -1,5 +1,58 @@
+body {
+    background-image: url("../images/dark-paths/dark-paths.png");
+}
+.header1 {
+    color: white;
+    font-size: 5rem;
+    text-align: center;
+    margin-top: 2%;
+}
+/* #main-title {
+    display: inline-block;
+} */
+.header2 {
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 2%;
+}
+.container {
+    width: 960px;
+    background-color: rgba(135,206,250,0.25);
+    margin: 3% auto;
+    padding: 3%;
+}
+.instructions {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.result-tally {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 2%;
+}
+.game {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 2%;
+    height: 260px;
+}
+.alert-container {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 2%;
+    height: 40px;
+}
+.image-container {
+    text-align: center;
+    margin-top: 2%;
+}
 #image {
-    width: 400px;
+    width: 450px;
     height: auto;
     display: inline-block;
 }

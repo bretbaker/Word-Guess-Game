@@ -35,14 +35,14 @@ let currentWordArr = () => {
     }
 }
 
-// set blank spaces for each letter of random word
+// set blank spaces for each letter of chosen word
 let blankSpacesArr = () => {
     for (let i = 0; i < chosenWord.length; i++) {
         blankSpaces.push("_") * i;
     }
 }
 
-// create function that takes user input, compares it against all indices of currentWord and splices the value(s) into blankSpaces at correct index position
+// get user input, compare it against all indices of currentWord and splice the value(s) into blankSpaces at correct index position
 let spliceBlankSpaces = () => {
     currentWord.forEach((element) => {
         // console.log(element);
@@ -61,7 +61,7 @@ let spliceBlankSpaces = () => {
     })
 }
 
-// create win condition function
+// win condition function
 let winner = () => {
     winCount += 1;
     document.getElementById("wins").innerHTML = winCount;
@@ -82,7 +82,7 @@ let winner = () => {
     document.getElementById("alert").innerHTML = "You win! Play again!";
 }
 
-// create lose condition funcion
+// lose condition funcion
 let loser = () => {
     lossCount += 1;
     document.getElementById("losses").innerHTML = lossCount;
@@ -103,7 +103,7 @@ let loser = () => {
     document.getElementById("alert").innerHTML = "You lose! Try again!";
 }
 
-// create function that checks to see if letter has already been guessed, alerts the user so, and prevents them from wasting a guess
+// check if input letter has already been guessed
 let alreadyGuessedCheck = () => {
     lettersGuessed.pop();
     if (lettersGuessed.includes(letterGuessed)) {
@@ -115,7 +115,7 @@ let alreadyGuessedCheck = () => {
     }
 }
 
-// create function that checks for special characters and returns error if true
+// check if input is a special character
 let specCharCheck = () => {
     if (alphabet.includes(letterGuessed)) {
         return false;
@@ -156,7 +156,7 @@ document.onkeyup = (event) => {
     specCharCheck();
     specChar = specCharCheck();
     if (alreadyGuessed && specChar === false) {
-        document.getElementById("alert").innerHTML = "You already guessed that! Guess a different letter!";
+        document.getElementById("alert").innerHTML = "You already guessed that letter! Guess a different one!";
         lettersGuessed.pop();
     } else if (alreadyGuessed === false && specChar === false) {
         spliceBlankSpaces();

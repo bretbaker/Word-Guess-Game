@@ -1,5 +1,5 @@
 // -------------------------
-// declare global variables ------------------------------------------------------------------------
+// global variables ------------------------------------------------------------------------
 // -------------------------
 
 let guessesRemaining = 12;
@@ -17,7 +17,7 @@ let blankSpaces = [];
 let specChar;
 
 // ---------------------------
-// declare global functions --------------------------------------------------------------------------
+// global functions --------------------------------------------------------------------------
 // ----------------------------
 
 // get random word
@@ -35,7 +35,7 @@ let currentWordArr = () => {
     }
 }
 
-// functions to be called if user wins, changes display of appropriate image from none to inline-block
+// functions to be called if user wins, changes image source to relevant file
 let boardwalkImage = () => {
     document.getElementById("image").src = "assets/images/boardwalk.jpg";
     document.getElementById("winning-word").innerHTML = "Boardwalk!";
@@ -124,7 +124,7 @@ let winner = () => {
     document.getElementById("alert").innerHTML = "You win! Play again!";
 }
 
-// lose condition funcion
+// lose condition function
 let loser = () => {
     lossCount += 1;
     document.getElementById("losses").innerHTML = lossCount;
@@ -174,9 +174,9 @@ let specCharCheck = () => {
 // call initial functions
 chosenWord = randWord();
 chosenWord = chosenWord.toUpperCase();
-console.log(chosenWord);
+// console.log(chosenWord);
 currentWordArr();
-console.log(currentWord);
+// console.log(currentWord);
 blankSpacesArr();
 window.onload = () => {
     document.getElementById("currentWord").innerHTML = blankSpaces.join(" ");
@@ -188,9 +188,9 @@ document.onkeyup = (event) => {
     document.getElementById("alert").innerHTML = "";
     letterGuessed = event.key;
     letterGuessed = letterGuessed.toUpperCase();
-    console.log(letterGuessed);
+    // console.log(letterGuessed);
     lettersGuessed.push(letterGuessed);
-    console.log(lettersGuessed);
+    // console.log(lettersGuessed);
     alreadyGuessed = alreadyGuessedCheck();
     specChar = specCharCheck();
     if (alreadyGuessed && specChar === false) {
@@ -199,9 +199,9 @@ document.onkeyup = (event) => {
     } else if (alreadyGuessed === false && specChar === false) {
         spliceBlankSpaces();
         let winWord = blankSpaces.join("");
-        console.log(winWord);
-        console.log(lettersGuessed);
-        console.log(blankSpaces);
+        // console.log(winWord);
+        // console.log(lettersGuessed);
+        // console.log(blankSpaces);
         document.getElementById("currentWord").innerHTML = blankSpaces.join(" ");
         document.getElementById("guesses").innerHTML = lettersGuessed.join(", ");
         guessesRemaining -= 1;

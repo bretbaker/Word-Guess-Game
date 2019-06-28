@@ -4,33 +4,32 @@ body {
 }
 .head-container {
     margin: 0 auto;
-    margin-top: 2%;
+    margin-top: 1%;
     text-align: center;
-    width: 930px;
-    border-bottom: double white;
+    width: 800px;
 }
 .header1 {
-    color: white;
-    font-size: 5rem;
-    text-align: center;
-    margin: 0 auto;
-    text-shadow: 5px 5px rgba(135,206,250,0.5);
-}
-.header2 {
     color: white;
     font-size: 3rem;
     text-align: center;
     margin: 0 auto;
+    text-shadow: 3px 3px rgba(135,206,250,0.5);
+}
+.header2 {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0 auto;
     padding-bottom: 1%;
-    text-shadow: 5px 5px rgba(135,206,250,0.5);
+    text-shadow: 3px 3px rgba(135,206,250,0.5);
 }
 .body-container {
     width: 900px;
     background-color: rgba(135,206,250,0.25);
-    margin: 3% auto;
+    margin: 1% auto;
     padding: 1%;
-    border: double white;
-    font-size: 1.5rem;
+    border: solid 1px white;
+    font-size: 1rem;
 }
 .instructions {
     color: white;
@@ -45,12 +44,12 @@ body {
     color: white;
     text-align: center;
     margin-top: 2%;
-    height: 260px;
+    height: 200px;
 }
 .alert-container {
     color: white;
     text-align: center;
-    margin-top: 3%;
+    margin-top: 1%;
     height: 40px;
 }
 .image-container {
@@ -65,29 +64,21 @@ body {
     transform: translate(-50%, -50%);
     font-size: 3rem;
     color: white;
-    text-shadow: 5px 5px rgba(135,206,250,0.5);
+    text-shadow: 3px 3px rgba(135,206,250,0.5);
   }
 #image {
     width: 450px;
     height: auto;
     display: inline-block;
-    border: double white;
+    border: solid 1px white;
 }
 .foot {
     width: 100%;
-    height: 50px;
     text-align: center;
     color: white;
-    background-color: rgba(135,206,250,0.25);
-    border-top: double white;
-    position: fixed;
-    bottom: 0;
+    margin: 2% auto;
 }
-#foot-text {
-    width: 100%;
-    position: fixed;
-    bottom: 1%;
-}
+
 @media only screen and (max-width: 980px) {
     .head-container {
         width: 728px;
@@ -103,45 +94,18 @@ body {
     .body-container {
         width: 630px;
     }
-    .foot {
-        position: relative;
-    }
-    #foot-text {
-        position: relative;
-        margin-top: 2.5%;
-    }
 }
 @media only screen and (max-width: 655px) {
     .head-container {
         width: 97%;
     }
-    .header1 {
-        font-size: 3rem;
-        text-shadow: 3px 3px rgba(135,206,250,0.5);
-    }
-    .header2 {
-        font-size: 1.75rem;
-        text-shadow: 3px 3px rgba(135,206,250,0.5);
-    }
     .body-container {
         width: 95%;
-        font-size: 1rem;
-    }
-    .game {
-        height: 200px;
     }
     #winning-word {
         font-size: 1.75rem;
-        text-shadow: 3px 3px rgba(135,206,250,0.5);
       }
     #image {
         width: 75%;
-    }
-    .foot {
-        position: relative;
-    }
-    #foot-text {
-        position: relative;
-        margin-top: 4%;
     }
 }
